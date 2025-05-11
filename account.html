@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Account</title>
+  <link rel="website  icon" type="png" href="image/dblue3.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: radial-gradient(#fff,#ffd6d6);
+      background-size: cover;
+    }
+
+    .account-container {
+      padding: 20px;
+      background: linear-gradient(135%, rgba(225, 225, 225, 0.1), rgba(225, 225, 225, 0));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(225, 225, 225, 0.18);
+      box-shadow: 5px 10px 32px 0 rgba(0, 0, 0, 0.37);
+      width: 400px;
+      height: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff523b;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+    .logo{
+      margin-left: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="account-container">
+  <div class="logo">
+    <img src="image/dblue2.png" width="180px" height="50px">
+  </div>
+    <h2>Your Account</h2>
+    <p><strong>Name:</strong> <span id="accountName"></span></p>
+    <p><strong>Username:</strong> <span id="accountUsername"></span></p>
+    <p><strong>Email:</strong> <span id="accountEmail"></span></p>
+    <p><strong>Address:</strong> <span id="accountAddress"></span></p>
+    <p><strong>Contact:</strong> <span id="accountContact"></span></p>
+    <button id="editButton" onclick="editAccount()">Edit</button>
+    <button onclick="home()">Go Back</button>
+    <button onclick="logout()">Logout</button>
+    
+</div>
+
+<script>
+  window.onload = function() {
+    loadAccountDetails();
+  };
+
+
+  function loadAccountDetails() {
+    const userName = localStorage.getItem('userName');
+    const userUsername = localStorage.getItem('username');
+    const userEmail = localStorage.getItem('userEmail');
+    const userAddress = localStorage.getItem('userAddress');
+    const userContact = localStorage.getItem('userContact');
+
+    if (userEmail) {
+      document.getElementById('accountName').textContent = userName;
+      document.getElementById('accountUsername').textContent = userUsername;
+      document.getElementById('accountEmail').textContent = userEmail;
+      document.getElementById('accountAddress').textContent = userAddress;
+      document.getElementById('accountContact').textContent = userContact;
+    } else {
+      window.location.href = "index.html";
+    }
+  }
+
+
+  function editAccount() {
+ 
+    document.getElementById('accountName').innerHTML = `<input type="text" id="editName" value="${localStorage.getItem('userName')}">`;
+    document.getElementById('accountUsername').innerHTML = `<input type="text" id="editUsername" value="${localStorage.getItem('username')}">`;
+    document.getElementById('accountEmail').innerHTML = `<input type="email" id="editEmail" value="${localStorage.getItem('userEmail')}">`;
+    document.getElementById('accountAddress').innerHTML = `<input type="text" id="editAddress" value="${localStorage.getItem('userAddress')}">`;
+    document.getElementById('accountContact').innerHTML = `<input type="text" id="editContact" value="${localStorage.getItem('userContact')}">`;
+
+    const editButton = document.getElementById('editButton');
+    editButton.textContent = 'Save';
+    editButton.setAttribute('onclick', 'saveAccount()');
+  }
+
+  function saveAccount() {
+    const updatedName = document.getElementById('editName').value;
+    const updatedUsername = document.getElementById('editUsername').value;
+    const updatedEmail = document.getElementById('editEmail').value;
+    const updatedAddress = document.getElementById('editAddress').value;
+    const updatedContact = document.getElementById('editContact').value;
+
+    localStorage.setItem('userName', updatedName);
+    localStorage.setItem('username', updatedUsername);
+    localStorage.setItem('userEmail', updatedEmail);
+    localStorage.setItem('userAddress', updatedAddress);
+    localStorage.setItem('userContact', updatedContact);
+
+    loadAccountDetails();
+
+    const editButton = document.getElementById('editButton');
+    editButton.textContent = 'Edit';
+    editButton.setAttribute('onclick', 'editAccount()');
+  }
+
+  function clearSignInFields() {
+    document.getElementById('signInEmail').value = '';
+    document.getElementById('signInPassword').value = '';
+  }
+
+  function home() {
+    window.location.href = "index.html";
+  }
+
+  function logout() {
+    window.location.href = "index-signup.html";
+    localStorage.clearSignInFields();
+  }
+</script>
+
+</body>
+</html>

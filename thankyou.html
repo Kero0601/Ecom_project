@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You for Your Order - Basta | e-commerce</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="website  icon" type="png" href="image/dblue3.png">
+  <style>
+    body {
+        background: radial-gradient(#fff, #ffd6d6);
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+        align-items: center;
+    }
+
+    .col-2 {
+        flex: 1;
+        padding: 20px;
+        padding-top: 100px;
+    }
+
+    .col-2 img {
+        display: block;
+        margin-top: 20px;
+        margin-left: 60px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+    }
+    .wrapper{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #fff url(image/pre2.gif) no-repeat center center;
+    background-size: 50%;
+    display: grid;
+    place-items: center;
+    transition: opacity 5s, visibility 5s;
+}
+.fade{
+    opacity: 100%;
+    visibility: hidden;
+}
+  </style>
+</head>
+<body>
+    <div class="wrapper">
+		<div class="loader"></div>
+	</div>
+    <div class="header">
+        <div class="container">
+            <div class="col-2">
+                <h1>Thank You for Your Order!</h1>
+                <p>We appreciate your purchase! Your order is being processed, and we will notify you as soon as it ships. <br>
+                If you have any questions, feel free to reach out to our customer support team.</p>
+                <p>In the meantime, feel free to browse our other amazing products!</p>
+                <a href="index.html" class="btn">Go Back to Shop &#8594;</a>
+            </div>
+            <div class="col-2">
+                <img src="image/final.png" alt="Thank You Image">
+            </div>
+        </div>
+    </div>
+    <script>
+        	const fadeOut = () => {
+			const loaderwrapper = 
+			document.querySelector('.wrapper');
+			loaderwrapper.classList.add('fade')
+		}
+
+		window.addEventListener('load', fadeOut);
+    </script>
+</body>
+</html>

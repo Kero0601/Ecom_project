@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - Basta | e-commerce</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="website  icon" type="png" href="image/dblue3.png">
+</head>
+<body>
+
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="image/dblue2.png" width="180px" height="50px">
+      </div>
+      <nav>
+        <ul id="MenuItems">
+					<li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+					<li><a href="product.html"><i class="fa fa-car" aria-hidden="true"></i>Product</a></li>
+					<li><a href="Contact2.html"><i class="fa fa-address-book" aria-hidden="true"></i>Contact</a></li>
+					<li><a href="sikret.html"><i class="fa fa-info-circle" aria-hidden="true"></i>About</a></li>
+          <li><a href="account.html" id="account-link"><i class="fa fa-user-circle" id="account-icon" aria-hidden="true"></i> <span id="account-username">Account</span></a></li>
+				</ul>
+      </nav>
+      <img src="image/ham2-transformed.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+  </div>
+
+  <div class="small-container cart-page">
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Remove</th>
+      </tr>
+      
+      <tbody id="cart-items"></tbody>
+    </table>
+
+    <div class="total-price">
+      <table>
+        <tr>
+          <td>Subtotal</td>
+          <td id="subtotal">₱0.00</td>
+        </tr>
+        <tr>
+          <td>Shipping Fee</td>
+          <td>₱50.00</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td id="total">₱0.00</td>
+        </tr>
+      </table>
+    </div>
+
+    <a href="#" class="btn" onclick="check()">Proceed to Checkout</a>
+  </div>
+
+  <script>
+   
+    window.onload = function() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartItemsContainer = document.getElementById('cart-items');
+    let subtotal = 0;
+
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = "<tr><td colspan='4'>Your cart is empty.</td></tr>";
+    } else {
+      cart.forEach((item, index) => {
+        const totalPrice = item.price * item.quantity;
+        subtotal += totalPrice;
+        cartItemsContainer.innerHTML += `
+          <tr>
+            <td>
+              <div class="cart-info">
+                <img src="${item.image}" width="50px" height="50px">
+                <div>
+                  <p>${item.name}</p>
+                  <small> ${item.size}</small><br>
+                  <small>Price: ₱${item.price}</small>
+                </div>
+              </div>
+            </td>
+            <td>${item.quantity}</td>
+            <td>₱${totalPrice}</td>
+            <td><button class="remove-btn" onclick="removeItem(${index})">Remove</button></td>
+          </tr>
+        `;
+      });
+
+      document.getElementById('subtotal').innerText = `₱${subtotal.toFixed(2)}`;
+      document.getElementById('total').innerText = `₱${(subtotal + 50).toFixed(2)}`;
+    }
+    const username = localStorage.getItem('username');
+    const accountLink = document.getElementById("account-link");
+    const accountIcon = document.getElementById("account-icon");
+    const accountUsername = document.getElementById("account-username");
+
+    if (username && accountLink) {
+      accountUsername.textContent = username;
+      accountIcon.classList.remove("fa-user-circle");
+      accountIcon.classList.add("fa-user");
+    }
+  };
+
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart.splice(index, 1);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    location.reload();
+  }
+
+  function check() {
+    if (confirm("Are you sure you want to proceed to checkout?")) {
+      localStorage.removeItem('cart');
+
+      alert("Successfully Checkout!!");
+
+      window.location.href = "thankyou.html";
+    }
+  }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      cart.splice(index, 1);
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      location.reload();
+    }
+
+function check() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.length === 0) {
+    alert("Your cart is empty. Please add items before proceeding to checkout.");
+    return;
+  }
+  if (confirm("Are you sure you want to proceed to checkout?")) {
+    localStorage.removeItem('cart');
+    alert("Successfully Checkout!!");
+    window.location.href = "thankyou.html";
+  }
+}
+  </script>
+
+</body>
+</html>

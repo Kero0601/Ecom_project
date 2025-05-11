@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(#fff, #ffd6d6);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.contact-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 120px 0; 
+}
+
+.contact-section h2 {
+    background-color: #ff523b;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.map-container {
+    flex: 1;
+    height: 400px;
+    width: 50%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    padding-left: 90px;
+    padding-bottom: 40px;
+    
+}
+
+.contact-info {
+    flex: 1;
+    font-size: 14px;
+}
+
+.contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #ff523b;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #563434;
+}
+
+footer {
+    background-color: #ff523b;
+    color: white;
+    text-align: center;
+    padding: 50px 0; 
+    font-size: 16px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+}
+nav{
+ flex: 1;   
+ text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #555;
+}
+nav ul a{
+    text-decoration: none;
+    padding: 7px 7px;
+    border-radius: 99px;
+    transition: 150ms;
+}
+nav li a:hover{
+    background: #ff523b;
+    color: #fff;
+}
+li i{
+    margin: 3px;
+}
+p i{
+    margin: 5px;
+}

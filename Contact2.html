@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Contact2.css">
+    <link rel="website  icon" type="png" href="image/dblue3.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+		<div class="navbar">
+			<div class="logo">
+				<img src="image/dblue2.png" width="180px" height="50px">
+			</div>
+			<nav>
+                <ul id="MenuItems">
+					<li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+					<li><a href="product.html"><i class="fa fa-car" aria-hidden="true"></i>Product</a></li>
+					<li><a href="Contact2.html"><i class="fa fa-address-book" aria-hidden="true"></i>Contact</a></li>
+					<li><a href="sikret.html"><i class="fa fa-info-circle" aria-hidden="true"></i>About</a></li>
+					<li><a href="account.html" id="account-link"><i class="fa fa-user-circle" id="account-icon" aria-hidden="true"></i> <span id="account-username">Account</span></a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+    <main>
+        <section class="contact-section">
+            <h2>Contacts</h2>
+        </section>
+            <div class="contact-container">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1251.0897662755804!2d120.93833267480062!3d15.448345389647555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339727d57ef0edc9%3A0x94e292410c0bdb28!2sNueva%20Ecija%20University%20of%20Science%20and%20Technology%2C%20Sumacab%20Campus!5e1!3m2!1sen!2sph!4v1732515289758!5m2!1sen!2sph" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="contact-info">
+                    <h3>ShopSphere Group</h3>
+                    <p><strong><i class="fa fa-map-marker" aria-hidden="true"></i>Location:</strong> CWXQ+8M5, Cabanatuan City, 3100 Nueva Ecija</p>
+                    <p><strong><i class="fa fa-phone" aria-hidden="true"></i>Phone:</strong> +63 998 229 8090</p>
+                    <p><strong><i class="fa fa-envelope" aria-hidden="true"></i>Email:</strong> ShopSphere@gmail.com</p>
+                    <p><strong><i class="fa fa-globe" aria-hidden="true"></i>Social Media:</strong></p>
+                    <ul class="social-links">
+                        <li><a href="https://web.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i>Facebook</a></li>
+                        <li><a href="https://instagram.com/yourstore"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+                        <li><a href="https://telegram.org/"><i class="fa fa-telegram" aria-hidden="true"></i>Telegram</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+    </main>
+
+    <footer>
+        <p>© 2024 ShopSphere Group</p>
+    </footer>
+    <script>
+         window.onload = function() {
+    const username = localStorage.getItem('username');
+    const accountLink = document.getElementById("account-link");
+    const accountIcon = document.getElementById("account-icon");
+    const accountUsername = document.getElementById("account-username");
+
+    if (username && accountLink) {
+        accountUsername.textContent = username;
+        accountIcon.classList.remove("fa-user-circle");
+        accountIcon.classList.add("fa-user");
+        accountIcon.style.backgroundImage = "url('path_to_user_image.jpg')";
+        accountIcon.style.backgroundSize = "cover";
+    }
+};
+    </script>
+</body>
+</html>

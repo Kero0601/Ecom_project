@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products - Basta | e-commerce</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/c6171ea6dc.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="website  icon" type="png" href="image/dblue3.png">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="image/dblue2.png" width="180px" height="50px">
+      </div>
+      <nav>
+        <ul id="MenuItems">
+					<li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+					<li><a href="product.html"><i class="fa fa-car" aria-hidden="true"></i>Product</a></li>
+					<li><a href="Contact2.html"><i class="fa fa-address-book" aria-hidden="true"></i>Contact</a></li>
+					<li><a href="sikret.html"><i class="fa fa-info-circle" aria-hidden="true"></i>About</a></li>
+					<li><a href="account.html" id="account-link"><i class="fa fa-user-circle" id="account-icon" aria-hidden="true"></i> <span id="account-username">Account</span></a></li>
+				</ul>
+      </nav>
+      <a href="cart.html">
+        <img src="image/add-to-cart-4.png" width="30px" height="30px">
+      </a>
+      <img src="image/ham2-transformed.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+  </div>
+
+  <!-- Product Details Section -->
+  <div class="small-container single-product">
+    <div class="row">
+      <div class="col-2">
+        <img src="image/lpro3.png" width="100%" id="ProductImg">
+        <div class="small-img-row">
+          <div class="small-img-col">
+            <img src="image/w1.png" width="100%" class="small-img" onclick="changeImage(this)">
+          </div>
+          <div class="small-img-col">
+            <img src="image/w2.png" width="100%" class="small-img" onclick="changeImage(this)">
+          </div>
+          <div class="small-img-col">
+            <img src="image/w3.png" width="100%" class="small-img" onclick="changeImage(this)">
+          </div>
+          <div class="small-img-col">
+            <img src="image/w4.png" width="100%" class="small-img" onclick="changeImage(this)">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-2">
+        <p>Home / Watch</p>
+        <h1>New Sports Electronic Watch Women's</h1>
+        <h4>₱110.00</h4>
+
+        <!-- Size Selection -->
+        <select id="productSize">
+          <option>Select Color</option>
+          <option>Blue</option>
+          <option>Violet</option>
+          <option>Red</option>
+          <option>Black</option>
+          <option>Orange</option>
+       
+        </select>
+
+        <!-- Quantity Selection -->
+        <input type="number" value="1" id="productQuantity" min="1">
+
+        <!-- Add to Cart Button -->
+        <button class="cart-button">
+          <span class="add-to-cart">
+            Add to Cart
+        </span>
+          <span class="added">
+            ADDED
+        </span>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-box"></i>
+        </button>
+
+        <h3>Product Details <i class="fa fa-indent"></i></h3>
+        <br>
+        <p>This sleek and stylish women's sports electronic watch combines modern design with advanced functionality. It features a durable, lightweight construction perfect for daily wear and intense workouts. Equipped with a high-resolution touchscreen display, the watch offers easy access to fitness tracking features, including heart rate monitoring, step counting, calorie tracking, and sleep analysis. It also provides real-time notifications for calls, messages, and app alerts, ensuring you stay connected while on the go. The water-resistant design makes it suitable for swimming and outdoor activities, while its long-lasting battery ensures you stay powered throughout your day. Ideal for active women who want to combine fashion with performance, this watch offers customizable watch faces and is compatible with various fitness apps.</p>
+      </div>
+    </div>
+  </div>
+  <!-----title------->
+  <div class="small-container">
+	<div class="row row-2">
+		<h2>Related Products</h2>
+		<a href="product.html"><p>View More</p></a>
+	</div>
+</div>
+
+<!-----product------->
+<div class="small-container">
+<div class="row">
+	<div class="col-4">
+        <a href="products-details.html">
+            <img src="image/cn-11134207-7r98o-lzhgytk8nogy85.png">
+            <h4>Men's Korean version Polo shirt</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <p>₱150.00</p>
+          </a>
+	</div>
+	<div class="col-4">
+        <a href="product3.html">
+            <img src="image/pro3.png">
+            <h4>Korean Fashion Basketball Shoes For Men</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>₱150.00</p>
+      </a>
+	</div>
+	<div class="col-4">
+        <a href="products2.html">
+            <img src="image/pro2.png">
+            <h4>Hooded Jacket For Women Simple Plain</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>₱150.00</p>
+        </a>
+	</div>
+	<div class="col-4">
+        <a href="product4.html">
+            <img src="image/pro4.png">
+            <h4>Powder Makeup Powder Waterproof Conceal Powder</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>₱80.00</p>
+            </a>
+	</div>
+</div>
+</div>
+<!-----footer------->
+<div class="footer">
+<div class="container">
+	<div class="row">
+		<div class="footer-col-1">
+			<h3>Download Our Apps</h3>
+			<p>Download Apps for Android and ios Mobile Phone.</p>
+      <div class="app-logo">
+        <a href="https://apple.com/ph/app-store/"><img src="image/appleStore.0ca159be.png"></a>
+        <a href="https://play.google.com/store/games?hl=en"><img src="image/googlePlay.df026781.png"></a>
+      </div>
+		</div>
+		<div class="footer-col-2">
+			<img src="image/dblue2.png">
+			<p>Our purpose is to provide customers with a seamless online shopping experience by offering a 
+			curated selection of high-quality products at competitive prices.</p>
+		</div>
+		<div class="footer-col-3">
+			<h3>Useful Links</h3>
+			<ul>
+				    <li><a href="#">Coupons</a></li>
+						<li><a href="#">Blog Post</a></li>
+						<li><a href="#">Return Policy</a></li>
+						<li><a href="">Join Affiliate</a></li>
+			</ul>
+		</div>
+		<div class="footer-col-4">
+			<h3>Follow Us</h3>
+			<ul>
+				<li><a href="https://www.facebook.com/">Facebook</a></li>
+						<li><a href="https://x.com/?mx=2">Twitter</a></li>
+						<li><a href="https://www.instagram.com/">Instagram</a></li>
+						<li><a href="https://www.youtube.com/">YouTube</a></li>
+			</ul>
+		</div>
+
+	</div>
+	<hr>
+	<p class="copyright">Copyright 2024 - For CaseStudy</p>
+</div>
+</div>
+
+  <script>
+   
+    function changeImage(element) {
+      document.getElementById('ProductImg').src = element.src;
+    }
+
+    function addToCart() {
+      const product = {
+        name: "New Sports Electronic Watch Women's",
+        price: 110,
+        size: document.getElementById('productSize').value,
+        quantity: document.getElementById('productQuantity').value,
+        image: document.getElementById('ProductImg').src
+      };
+
+      if (product.size === "Select Color") {
+        alert("Please select a color.");
+        return;
+      }
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      cart.push(product);
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`${product.name} has been added to your cart.`);
+    }
+    window.onload = function() {
+    const username = localStorage.getItem('username');
+    const accountLink = document.getElementById("account-link");
+    const accountIcon = document.getElementById("account-icon");
+    const accountUsername = document.getElementById("account-username");
+
+    if (username && accountLink) {
+        accountUsername.textContent = username;
+        accountIcon.classList.remove("fa-user-circle");
+        accountIcon.classList.add("fa-user");
+        accountIcon.style.backgroundImage = "url('path_to_user_image.jpg')";
+        accountIcon.style.backgroundSize = "cover";
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cartBtn = document.querySelector('.cart-button');
+
+  cartBtn.addEventListener('click', () => {
+    const productSize = document.getElementById('productSize').value;
+
+    if (productSize === "Select Color") {
+      alert("Please select a color.");
+      return;
+    }
+
+    addToCart();
+
+    cartBtn.classList.add('clicked');
+
+    setTimeout(() => {
+      cartBtn.classList.remove('clicked');
+    }, 3000);
+  });
+});
+  </script>
+</body>
+</html>
